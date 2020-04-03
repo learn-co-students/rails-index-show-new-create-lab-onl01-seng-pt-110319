@@ -1,22 +1,21 @@
 class CouponsController < ApplicationController
 def index
-    @posts = Post.all
+    @coupons = Coupon.all
   end
 
   def show
-    @post = Post.find(params[:id])
+    @coupon = Coupon.find(params[:id])
   end
 
   def new
-    @post = Post.new
+    @coupon = Coupon.new
   end
 
   def create
-    @post = Post.new
-    @post.title = params[:title]
-    @post.description = params[:description]
-    @post.save
-    redirect_to post_path(@post)
+    @coupon = Coupon.new
+    @coupon.coupon_code = params[:coupon_code]
+    @coupon.store = params[:store]
+    @coupon.save
+    redirect_to coupon_path(@coupon)
   end
-end
 end
