@@ -1,4 +1,4 @@
-class CouponController < ApplicationController
+class CouponController > ApplicationController
 
     def index
     end
